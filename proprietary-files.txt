@@ -33,7 +33,8 @@ vendor/lib/rfsa/adsp/misound_res_spk.bin
 # Audio
 vendor/lib64/hw/audio.primary.bengal.so
 vendor/lib64/libagm.so
-vendor/lib64/libar-pal.so
+# libar-pal depends on libagmclient, which is a gnu makefile target
+vendor/lib64/libar-pal.so;DISABLE_CHECKELF
 
 # Audio Configs
 odm/etc/audio_policy_engine_configuration_mi.xml:odm/etc/audio_policy_engine_configuration.xml
@@ -52,6 +53,17 @@ vendor/etc/mixer_paths_scubaidp.xml
 vendor/etc/mixer_paths_scubaqrd.xml
 vendor/etc/resourcemanager_scubaidp.xml
 vendor/etc/resourcemanager_scubaqrd.xml
+
+# Audio firmware
+vendor/firmware/aw87xxx_acf.bin
+vendor/firmware/fs1815.fsm
+vendor/firmware/sipa.bin
+
+# Battery
+vendor/bin/battery_stats
+vendor/bin/batterysecret
+vendor/etc/init/init.batterysecret.rc
+vendor/etc/init/vendor.qti.battery_stats.rc
 
 # Camera
 vendor/lib64/camera/components/com.arcsoft.node.realtimebokeh.so
@@ -215,7 +227,7 @@ vendor/lib64/libarcsoft_supernight.so
 vendor/lib64/libbase64.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libc++_shared.so
-vendor/lib64/libc++_shared_vf.so
+vendor/lib64/libc++_shared_vf.so;FIX_SONAME
 vendor/lib64/libcalculator.so
 vendor/lib64/libcalculator_htp.so
 vendor/lib64/libcamera_nn_stub.so
@@ -257,16 +269,16 @@ vendor/lib64/libopencv.so
 vendor/lib64/libopestriping.so
 vendor/lib64/libos.so
 vendor/lib64/libsamplefilterplugin.so
+vendor/lib64/libsnpe_dsp_domains_v2.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libthreadutils.so
 vendor/lib64/libvideofilter_only.so
-vendor/lib64/libvideotxr.so
-vendor/lib64/libvideoutils.so
 vendor/lib64/libvidhance.so
 vendor/lib64/libvidhance_ldc.so
 vendor/lib64/libvidhance_stabilizer.so
 vendor/lib64/libxmi_high_dynamic_range.so
+vendor/lib64/libxml2_vendor.so
 
 # Camera Configs
 odm/etc/camera/camerabooster.json
@@ -344,9 +356,106 @@ vendor/etc/camera/xiaomiSceneDetection.xml
 # Camera Post Processing
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 
+# Display
+product/etc/displayconfig/display_id_4630946444529356673.xml:vendor/etc/displayconfig/display_id_4630946444529356673.xml
+product/etc/displayconfig/display_id_4630946914797301377.xml:vendor/etc/displayconfig/display_id_4630946914797301377.xml
+vendor/etc/mdss_dsi_panel_m7_38_0c_0a_fhdp_video_mi.xml
+vendor/etc/mdss_dsi_panel_m7_38_0c_0b_fhdp_video_mi.xml
+vendor/etc/qdcm_calib_data_m7_38_0c_0a_video_mode_fhdp_dsi_panel.xml
+vendor/etc/qdcm_calib_data_m7_38_0c_0b_video_mode_fhdp_dsi_panel.xml
+
 # Firmware touch
 odm/firmware/Conf_MultipleTest_ft3519t.ini:vendor/firmware/Conf_MultipleTest_ft3519t.ini
 odm/firmware/focaltech_ts_fw_samsung_ft3519t.bin:vendor/firmware/focaltech_ts_fw_samsung_ft3519t.bin
 odm/firmware/goodix_cfg_group.bin:vendor/firmware/goodix_cfg_group.bin
 odm/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
 odm/firmware/gtx8_limits_M395.csv:vendor/firmware/gtx8_limits_M395.csv
+
+# Sensors Configs
+vendor/etc/sensors/config/agatti_ak991x_0.json
+vendor/etc/sensors/config/agatti_bmp285_0.json
+vendor/etc/sensors/config/agatti_bu52053nvx_0.json
+vendor/etc/sensors/config/agatti_default_sensors.json
+vendor/etc/sensors/config/agatti_lsm6dso_0.json
+vendor/etc/sensors/config/agatti_power_0.json
+vendor/etc/sensors/config/agatti_qrd_ak991x_0.json
+vendor/etc/sensors/config/agatti_qrd_lsm6dso_0.json
+vendor/etc/sensors/config/agatti_qrd_tmd2725.json
+vendor/etc/sensors/config/agatti_tmd2725.json
+vendor/etc/sensors/config/bengal_ak991x_0.json
+vendor/etc/sensors/config/bengal_bmp285_0.json
+vendor/etc/sensors/config/bengal_bu52053nvx_0.json
+vendor/etc/sensors/config/bengal_default_sensors.json
+vendor/etc/sensors/config/bengal_dynamic_sensors.json
+vendor/etc/sensors/config/bengal_lsm6dso_0.json
+vendor/etc/sensors/config/bengal_power_0.json
+vendor/etc/sensors/config/bengal_qrd_ak991x_0.json
+vendor/etc/sensors/config/bengal_qrd_lsm6dso_0.json
+vendor/etc/sensors/config/bengal_qrd_tmd2725.json
+vendor/etc/sensors/config/bengal_tmd2725.json
+vendor/etc/sensors/config/bmi3x0_0.json
+vendor/etc/sensors/config/dynamic_sensors.json
+vendor/etc/sensors/config/holi_tmd2755_0.json
+vendor/etc/sensors/config/icm4x6x.json
+vendor/etc/sensors/config/kona_qmc630x_0.json
+vendor/etc/sensors/config/kona_qmc630x_1.json
+vendor/etc/sensors/config/lahaina_mmc56x3x_0.json
+vendor/etc/sensors/config/lahaina_mmc56x3x_1.json
+vendor/etc/sensors/config/msmnile_bmi3x0_0.json
+vendor/etc/sensors/config/msmnile_icm4x6x.json
+vendor/etc/sensors/config/sdm845_sx932x_0.json
+vendor/etc/sensors/config/sns_amd.json
+vendor/etc/sensors/config/sns_amd_sw_disabled.json
+vendor/etc/sensors/config/sns_amd_sw_enabled.json
+vendor/etc/sensors/config/sns_aod.json
+vendor/etc/sensors/config/sns_aont.json
+vendor/etc/sensors/config/sns_basic_gestures.json
+vendor/etc/sensors/config/sns_bring_to_ear.json
+vendor/etc/sensors/config/sns_ccd.json
+vendor/etc/sensors/config/sns_ccd_v2_walk.json
+vendor/etc/sensors/config/sns_ccd_v3_1_walk.json
+vendor/etc/sensors/config/sns_ccd_v3_walk.json
+vendor/etc/sensors/config/sns_cm.json
+vendor/etc/sensors/config/sns_dae.json
+vendor/etc/sensors/config/sns_device_orient.json
+vendor/etc/sensors/config/sns_diag_filter.json
+vendor/etc/sensors/config/sns_direct_channel.json
+vendor/etc/sensors/config/sns_distance_bound.json
+vendor/etc/sensors/config/sns_dpc.json
+vendor/etc/sensors/config/sns_facing.json
+vendor/etc/sensors/config/sns_fmv.json
+vendor/etc/sensors/config/sns_fmv_legacy.json
+vendor/etc/sensors/config/sns_geomag_rv.json
+vendor/etc/sensors/config/sns_gyro_cal.json
+vendor/etc/sensors/config/sns_heart_rate.json
+vendor/etc/sensors/config/sns_mag_cal.json
+vendor/etc/sensors/config/sns_mag_cal_legacy.json
+vendor/etc/sensors/config/sns_multishake.json
+vendor/etc/sensors/config/sns_pedometer.json
+vendor/etc/sensors/config/sns_rmd.json
+vendor/etc/sensors/config/sns_rotv.json
+vendor/etc/sensors/config/sns_sar_algo.json
+vendor/etc/sensors/config/sns_smd.json
+vendor/etc/sensors/config/sns_tilt.json
+vendor/etc/sensors/config/sns_tilt_sw_disabled.json
+vendor/etc/sensors/config/sns_tilt_sw_enabled.json
+vendor/etc/sensors/config/sns_tilt_to_wake.json
+vendor/etc/sensors/config/sns_wrist_pedo.json
+vendor/etc/sensors/config/sx932x_0.json
+vendor/etc/sensors/hals.conf
+vendor/etc/sensors/sns_reg_config
+vendor/etc/sensor_diag.cfg
+
+# Thermal configs
+vendor/etc/thermal-camera.conf
+vendor/etc/thermal-chg-only.conf
+vendor/etc/thermal-class0.conf
+vendor/etc/thermal-engine.conf
+vendor/etc/thermal-navigation.conf
+vendor/etc/thermal-nolimits.conf
+vendor/etc/thermal-normal.conf
+vendor/etc/thermal-phone.conf
+vendor/etc/thermal-tgame.conf
+vendor/etc/thermal-video.conf
+vendor/etc/thermal-videochat.conf
+vendor/etc/thermald-devices.conf
