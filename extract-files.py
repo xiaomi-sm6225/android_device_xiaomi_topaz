@@ -30,6 +30,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'libagmclient',
+        'libpalclient',
     ): lib_fixup_remove,
 }
 

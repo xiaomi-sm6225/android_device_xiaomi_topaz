@@ -12,9 +12,9 @@ include vendor/xiaomi/topaz/BoardConfigVendor.mk
 
 DEVICE_PATH := device/xiaomi/topaz
 
-# Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Screen density
 TARGET_SCREEN_DENSITY := 440

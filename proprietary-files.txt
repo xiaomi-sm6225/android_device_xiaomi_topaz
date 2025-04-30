@@ -1,5 +1,8 @@
 # All unpinned blobs below are extracted from topaz OS2.0.8.0.VMGMIXM
 
+# libmcs depends on libar-acdb, libats and liblx-osal, which are gnu makefile targets
+# libagm depends on libar-gsl, libats and liblx-osal, which are gnu makefile targets
+
 # ACDB
 vendor/etc/acdbdata/bengal_idp/IDP_acdb_cal.acdb
 vendor/etc/acdbdata/bengal_idp/IDP_workspaceFileXml.qwsp
@@ -31,10 +34,25 @@ vendor/lib/rfsa/adsp/misound_res_headphone.bin
 vendor/lib/rfsa/adsp/misound_res_spk.bin
 
 # Audio
-vendor/lib64/hw/audio.primary.bengal.so
+vendor/lib64/libadm.so
 vendor/lib64/libagm.so
-# libar-pal depends on libagmclient, which is a gnu makefile target
+vendor/lib64/libar-acdb.so
+vendor/lib64/libar-gpr.so
+vendor/lib64/libar-gsl.so
 vendor/lib64/libar-pal.so;DISABLE_CHECKELF
+vendor/lib64/libats.so
+vendor/lib64/liblx-ar_util.so
+vendor/lib64/liblx-osal.so
+vendor/lib64/libmcs.so
+vendor/lib64/libqtigefar.so
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so;DISABLE_CHECKELF
+vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
+
+# Audio HAL
+vendor/lib64/hw/audio.primary.bengal.so
+vendor/lib64/libaudio_log_utils.so
 
 # Audio Configs
 odm/etc/audio_policy_engine_configuration_mi.xml:odm/etc/audio_policy_engine_configuration.xml

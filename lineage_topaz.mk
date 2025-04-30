@@ -10,6 +10,9 @@ $(call inherit-product, device/xiaomi/topaz/device.mk)
 # Inherit LineageOS configurations
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+
+TARGET_SUPPORTS_OMX_SERVICE := false
+
 PRODUCT_NAME := lineage_topaz
 PRODUCT_DEVICE := topaz
 PRODUCT_MODEL := 23021RAA2Y
