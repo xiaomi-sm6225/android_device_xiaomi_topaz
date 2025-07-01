@@ -29,8 +29,17 @@ namespace_imports = [
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
+        'libagm',
         'libagmclient',
+        'libar-acdb',
+        'libar-gpr',
+        'libar-gsl',
+        'libar-pal',
+        'libats',
+        'liblx-osal',
         'libpalclient',
+        'vendor.qti.hardware.AGMIPC@1.0-impl',
+        'vendor.qti.hardware.pal@1.0-impl',
     ): lib_fixup_remove,
 }
 
